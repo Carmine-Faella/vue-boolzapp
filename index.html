@@ -19,6 +19,7 @@
             </div>
 
             <div class="container">
+                
                 <div class="col-left">
                     <div class="head-name">
                         <img src="./img/avatar_1.jpg" alt="Utente"/>
@@ -41,7 +42,7 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <ul>
-                        <li class="avatar" v-for="avatar in contacts">
+                        <li class="avatar" v-for="(avatar,index) in contacts" @click="showAvatar(index)">
                             <img :src="avatar.avatar" :alt="avatar.name"/>
                             <div class="avatar-cnt">
                                 <div class="avatar-name">
@@ -53,10 +54,11 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="col-right">
-                    <div class="head-name">
-                        <img src="" alt=""/>
-                        <span>Nome Utente</span>
+                    <div class="head-name" v-if="avatarSelezionato != 0">
+                        <img :src="contacts[avatarSelezionato].avatar" alt=""/>
+                        <span>{{contacts[avatarSelezionato].name}}</span>
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-message"></i>
@@ -64,17 +66,10 @@
                         </div>
                     </div>
                     <div class="cnt-text">
-                        <div>
-                            <div class="message">
-                                <span class="sent">Ciao</span> 
-                            </div>
-                            <div class="message">
-                                <span class="sent">Ciao</span> 
-                            </div> 
-                            <div class="message">
-                                <span class="received ">Tutto fatto</span> 
-                            </div>    
-                        </div>   
+                        <ul>
+                            <li v-for="element in contacts" v-if="avatarSelezionato != -1" >
+                            </li>
+                        </ul>
                     </div>
                     <div class="head-name">
                         <i class="fa-regular fa-face-smile"></i>
@@ -83,6 +78,8 @@
                     </div>
 
                 </div>
+
+                
             </div>
 
         </main>
