@@ -28,18 +28,19 @@ body{
     width: 30%;
     background-color: white;
     border-right: 1px solid black;
+    overflow-y: scroll;
 }
 
 .col-right{
     width: 70%;
-    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url('../img/mine.jpg');
 }
 
 .head-name{
-    background-color: rgb(215,219,214);
+    background-color: rgb(234,234,234);
     padding: 20px;
     display: flex;
 }
@@ -78,4 +79,79 @@ i{
     margin-right: 10px;
 }
 
+.search{
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 5px;
+}
+
+button{
+    border: none;
+    background-color: white;
+    width: 20%;
+}
+
+.search input{
+    border: none;
+    padding: 10px;
+    width: 80%;
+}
+
+li{
+    list-style: none;
+    border-top:1px solid lightgray;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.avatar{
+    display: flex;
+    padding: 10px;
+}
+
+.avatar-cnt{
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.avatar-name{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+h4{
+    display: inline-block;
+}
+
+.cnt-text{
+    flex-grow: 1;
+    padding: 50px;
+}
+
+.message{
+    display: flex;
+}
+
+.sent{
+    display: inline-block;
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.received{
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    border-radius: 10px;
+}
 
