@@ -133,8 +133,21 @@ h4{
     padding: 50px;
 }
 
+.cnt-text span{
+    display: inline-block;
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.cnt-text li{
+    display: grid;
+}
+
 .sent{
     background-color: lightgreen;
+    justify-self: flex-end;
 }
 
 .received{
