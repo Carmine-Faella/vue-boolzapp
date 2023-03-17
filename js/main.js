@@ -167,14 +167,14 @@ const { createApp } = Vue
             ],
             }
             ],
-            avatarSelezionato:0
+            avatarSelezionato:0,
       }
     },
     methods:{
         showAvatar(index){
             this.avatarSelezionato = index;
         }
-      }
+        }
   }).mount('#app')
 
 

@@ -65,11 +65,9 @@
                             <i class="fa-solid fa-filter"></i>
                         </div>
                     </div>
-                    <div class="cnt-text">
+                    <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
-                            <li>   
-                                {{contacts[avatarSelezionato].messages}}
-                            </li>
+                            <li v-for="message in contacts[avatarSelezionato].messages">{{message.message}}</li>
                         </ul>
                     </div>
                     <div class="head-name">
