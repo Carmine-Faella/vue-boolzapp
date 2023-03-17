@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="col-right">
-                    <div class="head-name" v-if="avatarSelezionato != 0">
+                    <div class="head-name" v-if="avatarSelezionato != -1">
                         <img :src="contacts[avatarSelezionato].avatar" alt=""/>
                         <span>{{contacts[avatarSelezionato].name}}</span>
                         <div>
@@ -67,7 +67,8 @@
                     </div>
                     <div class="cnt-text">
                         <ul>
-                            <li v-for="element in contacts" v-if="avatarSelezionato != -1" >
+                            <li>   
+                                {{contacts[avatarSelezionato].messages}}
                             </li>
                         </ul>
                     </div>

@@ -173,7 +173,7 @@ const { createApp } = Vue
     methods:{
         showAvatar(index){
             this.avatarSelezionato = index;
-        },
+        }
       }
   }).mount('#app')
 
