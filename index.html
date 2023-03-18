@@ -57,7 +57,7 @@
 
                 <div class="col-right">
                     <div class="head-name" v-if="avatarSelezionato != -1">
-                        <img :src="contacts[avatarSelezionato].avatar" alt=""/>
+                        <img :src="contacts[avatarSelezionato].avatar" :alt="contacts[avatarSelezionato].name"/>
                         <span>{{contacts[avatarSelezionato].name}}</span>
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="head-name">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
 
