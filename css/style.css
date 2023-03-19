@@ -6,6 +6,7 @@
 
 body{
     background-color: rgb(215,219,214);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .top-bar{
@@ -25,9 +26,15 @@ body{
 
 .col-left{
     background-color: white;
-    border-right: 1px solid black;
+    border-right: 1px solid grey;
+    min-width: 351px;
     overflow-y: scroll;
-    min-width: 350px;
+}
+
+.top-head-name{
+    position: fixed;
+    height: 200px;
+    width: 350px;
 }
 
 .col-right{
@@ -57,7 +64,8 @@ body{
 }
 
 i{
-    padding: 0 5px;
+    padding: 0 8px;
+    opacity: 0.5;
 }
 
 .alert{
@@ -80,9 +88,8 @@ i{
 }
 
 .search{
-    border: 1px solid lightgray;
-    padding: 10px;
-    margin: 5px;
+    padding: 15px 0;
+    background-color: white
 }
 
 button{
@@ -94,7 +101,10 @@ button{
 .search input{
     border: none;
     padding: 10px;
-    width: 80%;
+}
+
+.col-left ul{
+    padding-top: 230px;
 }
 
 li{
@@ -131,6 +141,7 @@ h4{
 .cnt-text{
     flex-grow: 1;
     padding: 50px;
+    overflow-y: scroll;
 }
 
 .cnt-text div{
@@ -146,7 +157,7 @@ h4{
 }
 
 .sent{
-    background-color: lightgreen;
+    background-color: rgb(221,244,187);
     justify-self: flex-end;
 }
 
@@ -163,5 +174,21 @@ h4{
     text-align: right;
     display: block;
     padding-top: 10px;
+    color: grey;
+}
+
+.date-name{
+    font-size: 12px;
+    color: grey;
+    padding-top: 10px;
+}
+
+.name{
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.col-left a{
+    color:white
 }
 
