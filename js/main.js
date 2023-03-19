@@ -177,25 +177,20 @@ const { createApp } = Vue
             this.avatarSelezionato = index;
         },
         addMessage(){  
-            this.contacts.forEach(element => {
-                element.messages.push(
-                    {message: this.newMessage,
-                    status:'sent'
-                    }
-                )
-            });
+            this.contacts[this.avatarSelezionato].messages.push(
+                {message: this.newMessage,
+                status:'sent'
+                }
+            )
             setTimeout(this.addMessageComputer,1000);
-            
             this.newMessage = ''
         },
         addMessageComputer(){
-            this.contacts.forEach(element => {
-                element.messages.push(
+            this.contacts[this.avatarSelezionato].messages.push(
                     {message: 'ok',
                     status:'received'
                     }
-                )
-            })
+            )
         }
     }
   }).mount('#app')
