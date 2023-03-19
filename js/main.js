@@ -168,14 +168,15 @@ const { createApp } = Vue
             }
             ],
             avatarSelezionato:0,
-            newMessage:''
+            newMessage:'',
+            searchName:''
       }
     },
     methods:{
         showAvatar(index){
             this.avatarSelezionato = index;
         },
-        addMessage(){
+        addMessage(){  
             this.contacts.forEach(element => {
                 element.messages.push(
                     {message: this.newMessage,
@@ -184,7 +185,7 @@ const { createApp } = Vue
                 )
             });
             setTimeout(this.addMessageComputer,1000);
-
+            
             this.newMessage = ''
         },
         addMessageComputer(){
