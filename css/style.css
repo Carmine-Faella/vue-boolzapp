@@ -133,7 +133,7 @@ h4{
     padding: 50px;
 }
 
-.cnt-text span{
+.cnt-text div{
     display: inline-block;
     width: 250px;
     padding: 10px;
@@ -158,4 +158,10 @@ h4{
     display: none;
 }
 
+.date{
+    font-size: 12px;
+    text-align: right;
+    display: block;
+    padding-top: 10px;
+}
 

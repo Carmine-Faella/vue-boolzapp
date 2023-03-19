@@ -68,7 +68,10 @@
                     <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
                             <li v-for="message in contacts[avatarSelezionato].messages">
-                                <span :class="message.status">{{message.message}}</span>
+                                <div :class="message.status" class="message-box">
+                                    <span>{{message.message}}</span>
+                                    <span class="date">{{message.date}}</span>
+                                </div>
                             </li>
                         </ul>
                     </div>
