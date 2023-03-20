@@ -1,4 +1,6 @@
 
+const DateTime = luxon.DateTime;
+
 const { createApp } = Vue
 
   createApp({
@@ -168,9 +170,11 @@ const { createApp } = Vue
             }
             ],
             avatarSelezionato:0,
+            messageSelected:0,
             newMessage:'',
             searchName:'',
-            isActive:false
+            isActive:false,
+            Dates:DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
       }
     },
     methods:{
@@ -180,7 +184,8 @@ const { createApp } = Vue
         addMessage(){  
             this.contacts[this.avatarSelezionato].messages.push(
                 {message: this.newMessage,
-                status:'sent'
+                status:'sent',
+                date: this.Dates
                 }
             )
             setTimeout(this.addMessageComputer,1000);
@@ -192,20 +197,13 @@ const { createApp } = Vue
         addMessageComputer(){
             this.contacts[this.avatarSelezionato].messages.push(
                     {message: 'ok',
-                    status:'received'
+                    status:'received',
+                    date: this.Dates
                     }
             )
         },
-        clickDropdown(){
-            this.isActive = !this.isActive;
-
-        },
-        showDrop(index){
-            if(this.isActive == true ){
-                return ''
-            }else{
-                return 'd-none'
-            }
+        clickMessage(index){
+            this.messageSelected = index;
         }
     }
   }).mount('#app')

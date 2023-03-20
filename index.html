@@ -44,14 +44,16 @@
                     </div>
                     </div>
                     <ul>
-                        <li class="avatar" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)" >
+                        <li class="avatar" v-for="(avatar,index) in contacts" v-for="message,index in contacts[avatarSelezionato].messages" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)" >
                             <img :src="avatar.avatar" :alt="avatar.name"/>
                             <div class="avatar-cnt">
                                 <div class="avatar-name">
                                     <div>{{avatar.name}}</div>
                                     <span class="date">12.00</span>
                                 </div>
-                                <div class="last-msg" v-for="message,index in contacts[avatarSelezionato].messages"></div>
+                                <div class="last-msg"> 
+                                    {{avatar.messages}}
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -73,10 +75,10 @@
                     <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
                             <li v-for="message,index in contacts[avatarSelezionato].messages">
-                                <div :class="message.status" class="message-box" @click="clickDropdown()">
+                                <div :class="message.status" class="message-box" v-if="messageSelected != -1" @click="clickMessage(index)">
                                     <div class="dropdown">
                                         <span>{{message.message}}</span>
-                                        <div class="dropdown-list" :class="showDrop(index)">
+                                        <div class="dropdown-list">
                                             <div><i class="fa-solid fa-chevron-down"></i></div>
                                             <ul>
                                                 <li @click="remove(index)">Cancella Messaggio</li>
@@ -102,35 +104,9 @@
 
         </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
-
-
-
-
-
-
-
-
-
-
+    <script src=" https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js "></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script style="text/javascript" src="js/main.js"></script>
 </body>
