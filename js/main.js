@@ -174,7 +174,6 @@ const { createApp } = Vue
             newMessage:'',
             searchName:'',
             isActive:false,
-            Dates:DateTime.now().setLocale('it').toLocaleString(DateTime.TIME_24_SIMPLE)
       }
     },
     methods:{
@@ -185,7 +184,7 @@ const { createApp } = Vue
             this.contacts[this.avatarSelezionato].messages.push(
                 {message: this.newMessage,
                 status:'sent',
-                date: this.Dates
+                date: DateTime.now().setLocale('it').toLocaleString(DateTime.TIME_24_SIMPLE)
                 }
             )
             setTimeout(this.addMessageComputer,1000);
@@ -198,19 +197,12 @@ const { createApp } = Vue
             this.contacts[this.avatarSelezionato].messages.push(
                     {message: 'ok',
                     status:'received',
-                    date: this.Dates
+                    date: DateTime.now().setLocale('it').toLocaleString(DateTime.TIME_24_SIMPLE)
                     }
             )
         },
         clickMessage(index){
             this.messageSelected = index;
-        },
-        lastMessage(indice){
-            if(this.contacts[indice].messages.length - 1 == indice){
-                return ''
-            }else{
-                return 'd-none'
-            }
         }
     }
   }).mount('#app')
