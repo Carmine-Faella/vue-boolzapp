@@ -174,7 +174,7 @@ const { createApp } = Vue
             newMessage:'',
             searchName:'',
             isActive:false,
-            Dates:DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
+            Dates:DateTime.now().setLocale('it').toLocaleString(DateTime.TIME_24_SIMPLE)
       }
     },
     methods:{
@@ -204,6 +204,13 @@ const { createApp } = Vue
         },
         clickMessage(index){
             this.messageSelected = index;
+        },
+        lastMessage(indice){
+            if(this.contacts[indice].messages.length - 1 == indice){
+                return ''
+            }else{
+                return 'd-none'
+            }
         }
     }
   }).mount('#app')

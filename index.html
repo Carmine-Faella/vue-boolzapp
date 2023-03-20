@@ -44,16 +44,12 @@
                     </div>
                     </div>
                     <ul>
-                        <li class="avatar" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)" >
+                        <li class="avatar" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)">
                             <img :src="avatar.avatar" :alt="avatar.name"/>
                             <div class="avatar-cnt">
-                                <div class="avatar-name">
-                                    <div>{{avatar.name}}</div>
-                                    <span class="date">12.00</span>
-                                </div>
-                                <div class="last-msg" v-for="message,index in contacts[index].messages"> 
-                                    {{message.message}}
-                                </div>
+                                <div class="avatar-name">{{avatar.name}}</div>
+                                <span class="date"></span>
+                                <div class="last-msg"></div>         
                             </div>
                         </li>
                     </ul>
