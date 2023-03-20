@@ -144,9 +144,8 @@ h4{
     overflow-y: scroll;
 }
 
-.cnt-text div{
-    display: inline-block;
-    width: 250px;
+.message-box{
+    width: 285px;
     padding: 10px;
     margin: 5px;
     border-radius: 15px;
@@ -191,4 +190,35 @@ h4{
 .col-left a{
     color:white
 }
+
+.dropdown{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-list{
+    position: relative;
+}
+
+.dropdown ul{
+    position: absolute;
+    bottom: -100px;
+    left: -180px;
+    background-color: white;
+    width: 200px;
+    height: 100px;
+}
+
+.dropdown ul li{
+    padding: 15px;
+}
+
+.dropdown i{
+    display: none;
+}
+
+.dropdown:hover i{
+    display: inline-block;
+}
+
 

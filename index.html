@@ -72,9 +72,18 @@
                     </div>
                     <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
-                            <li v-for="message in contacts[avatarSelezionato].messages">
+                            <li v-for="message,index in contacts[avatarSelezionato].messages">
                                 <div :class="message.status" class="message-box">
-                                    <span>{{message.message}}</span>
+                                    <div class="dropdown">
+                                        <span>{{message.message}}</span>
+                                        <div class="dropdown-list">
+                                            <div><i class="fa-solid fa-chevron-down"></i></div>
+                                            <ul>
+                                                <li @click="remove(index)">Cancella Messaggio</li>
+                                                <li>Ulteriori info</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <span class="date">{{message.date}}</span>
                                 </div>
                             </li>
@@ -82,7 +91,7 @@
                     </div>
                     <div class="head-name">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage(message)">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage()">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
 

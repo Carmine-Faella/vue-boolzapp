@@ -185,6 +185,9 @@ const { createApp } = Vue
             setTimeout(this.addMessageComputer,1000);
             this.newMessage = ''
         },
+        remove(index){
+            this.contacts[this.avatarSelezionato].messages.splice(index,1)
+        },
         addMessageComputer(){
             this.contacts[this.avatarSelezionato].messages.push(
                     {message: 'ok',
