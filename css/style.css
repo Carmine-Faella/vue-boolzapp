@@ -213,12 +213,7 @@ h4{
     padding: 15px;
 }
 
-.dropdown i{
-    display: none;
-}
 
-.dropdown:hover i{
-    display: inline-block;
-}
+
 
 

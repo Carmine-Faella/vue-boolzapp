@@ -169,7 +169,8 @@ const { createApp } = Vue
             ],
             avatarSelezionato:0,
             newMessage:'',
-            searchName:''
+            searchName:'',
+            isActive:false
       }
     },
     methods:{
@@ -194,6 +195,17 @@ const { createApp } = Vue
                     status:'received'
                     }
             )
+        },
+        clickDropdown(){
+            this.isActive = !this.isActive;
+
+        },
+        showDrop(index){
+            if(this.isActive == true ){
+                return ''
+            }else{
+                return 'd-none'
+            }
         }
     }
   }).mount('#app')

@@ -73,10 +73,10 @@
                     <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
                             <li v-for="message,index in contacts[avatarSelezionato].messages">
-                                <div :class="message.status" class="message-box">
+                                <div :class="message.status" class="message-box" @click="clickDropdown()">
                                     <div class="dropdown">
                                         <span>{{message.message}}</span>
-                                        <div class="dropdown-list">
+                                        <div class="dropdown-list" :class="showDrop(index)">
                                             <div><i class="fa-solid fa-chevron-down"></i></div>
                                             <ul>
                                                 <li @click="remove(index)">Cancella Messaggio</li>
