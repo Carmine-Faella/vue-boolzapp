@@ -47,10 +47,11 @@
                         <li class="avatar" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)">
                             <img :src="avatar.avatar" :alt="avatar.name"/>
                             <div class="avatar-cnt">
-                                <div class="avatar-name">{{avatar.name}}</div>
-                                <span class="date"></span>
-                                <div class="last-msg"></div>         
-                            </div>
+                                <div class="avatar-name">
+                                    <span>{{avatar.name}}</span>
+                                    <span class="date" v-for="(last,indice) in contacts[index].messages" v-show="indice == contacts[index].messages.length - 1">{{last.date}}</span>
+                                </div>
+                                <div class="date-name" v-for="(last,indice) in contacts[index].messages" v-show="indice == contacts[index].messages.length - 1">{{last.message}}...</div>        
                         </li>
                     </ul>
                 </div>
@@ -60,7 +61,7 @@
                         <img :src="contacts[avatarSelezionato].avatar" :alt="contacts[avatarSelezionato].name"/>
                         <div class="name">
                             <span>{{contacts[avatarSelezionato].name}}</span>
-                            <div class="date-name">Ultimo accesso alle 12.00</div>
+                            <div class="date-name" v-for="(last,indice) in contacts[avatarSelezionato].messages" v-show="indice == contacts[avatarSelezionato].messages.length - 1">Ultimo Accesso alle {{last.date}}</div>
                         </div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>

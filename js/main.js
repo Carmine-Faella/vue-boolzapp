@@ -208,4 +208,4 @@ const { createApp } = Vue
   }).mount('#app')
 
 
-  
+  //v-if="contacts[index].messages.length - 1"
