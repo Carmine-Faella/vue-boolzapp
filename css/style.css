@@ -9,6 +9,22 @@ body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.d-flex{
+    display: flex;
+}
+
+.justify-content{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.p-10{
+    padding: 10px;
+}
+
 .top-bar{
     background-color: rgb(65,151,136);
     height: 80px;
@@ -16,7 +32,6 @@ body{
 
 .container{
     height: 600px;
-    display: flex;
     border: 1px solid black;
     position: absolute;
     top: 20px;
@@ -39,9 +54,7 @@ body{
 
 .col-right{
     width: 70%;
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-image: url('../img/mine.jpg');
     min-width: 700px;
 }
@@ -49,16 +62,9 @@ body{
 .head-name{
     background-color: rgb(234,234,234);
     padding: 20px;
-    display: flex;
-}
-
-.head-name{
-    justify-content: space-between;
-    align-items: center;
 }
 
 .head-name input{
-    padding: 10px;
     flex-grow: 1;
     margin: 0px 10px;
 }
@@ -70,9 +76,6 @@ i{
 
 .alert{
     background-color: rgb(136,209,242);
-    padding: 10px;
-    display: flex;
-    align-items: center;
 }
 
 .alert span{
@@ -81,10 +84,9 @@ i{
     display: inline-block;
     width: 50px;
     height: 50px;
-    display: flex;
     justify-content: center;
-    align-items: center;
     margin-right: 10px;
+    display: flex;
 }
 
 .search{
@@ -100,7 +102,6 @@ button{
 
 .search input{
     border: none;
-    padding: 10px;
 }
 
 .col-left ul{
@@ -118,19 +119,12 @@ img{
     border-radius: 50%;
 }
 
-.avatar{
-    display: flex;
-    padding: 10px;
-}
-
 .avatar-cnt{
     flex-grow: 1;
     padding-left: 10px;
 }
 
 .avatar-name{
-    display: flex;
-    justify-content: space-between;
     width: 100%;
 }
 
@@ -146,7 +140,6 @@ h4{
 
 .message-box{
     width: 285px;
-    padding: 10px;
     margin: 5px;
     border-radius: 15px;
 }
@@ -191,11 +184,6 @@ h4{
     color:white
 }
 
-.dropdown{
-    display: flex;
-    justify-content: space-between;
-}
-
 .dropdown-list{
     position: relative;
     display: none;
@@ -214,9 +202,7 @@ h4{
     padding: 15px;
 }
 
-.d-block{
-    display: block;
-}
+
 
 
 

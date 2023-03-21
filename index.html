@@ -18,11 +18,11 @@
 
             </div>
 
-            <div class="container">
+            <div class="container d-flex">
                 
                 <div class="col-left">
                     <div class="top-head-name">
-                    <div class="head-name">
+                    <div class="head-name d-flex justify-content align-center">
                         <img src="./img/avatar_1.jpg" alt="Utente"/>
                         <span class="name">Michele</span>
                         <div>
@@ -31,8 +31,8 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="alert">
-                        <span><i class="fa-regular fa-bell-slash"></i></span>
+                    <div class="alert d-flex align-center p-10">
+                        <span class="align-center"><i class="fa-regular fa-bell-slash"></i></span>
                         <div>
                             <h5>Ricevi notifiche di nuovi messaggi</h5>
                             <a href="#">Attiva notifiche desktop</a>
@@ -40,14 +40,14 @@
                     </div>
                     <div class="search">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchName">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchName" class="p-10">
                     </div>
                     </div>
                     <ul>
-                        <li class="avatar" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)">
+                        <li class="avatar d-flex p-10" v-for="(avatar,index) in contacts" :class="avatar.name.toLowerCase().includes(this.searchName.toLowerCase())?'':'d-none'" @click="showAvatar(index)">
                             <img :src="avatar.avatar" :alt="avatar.name"/>
                             <div class="avatar-cnt">
-                                <div class="avatar-name">
+                                <div class="avatar-name d-flex justify-content">
                                     <span>{{avatar.name}}</span>
                                     <span class="date" v-for="(last,indice) in contacts[index].messages" v-show="indice == contacts[index].messages.length - 1">{{last.date}}</span>
                                 </div>
@@ -56,8 +56,8 @@
                     </ul>
                 </div>
 
-                <div class="col-right">
-                    <div class="head-name" v-if="avatarSelezionato != -1">
+                <div class="col-right d-flex justify-content">
+                    <div class="head-name d-flex justify-content align-center" v-if="avatarSelezionato != -1">
                         <img :src="contacts[avatarSelezionato].avatar" :alt="contacts[avatarSelezionato].name"/>
                         <div class="name">
                             <span>{{contacts[avatarSelezionato].name}}</span>
@@ -65,17 +65,17 @@
                         </div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
                     <div class="cnt-text" v-if="avatarSelezionato != -1">
                         <ul>
                             <li v-for="message,index in contacts[avatarSelezionato].messages">
-                                <div :class="message.status" class="message-box" v-if="messageSelected != -1" @click="clickMessage(index)">
-                                    <div class="dropdown">
+                                <div :class="message.status" class="message-box p-10" v-if="messageSelected != -1" @click="clickMessage(index)">
+                                    <div class="dropdown d-flex justify-content" :class="classArray">
                                         <span>{{message.message}}</span>
-                                        <div class="dropdown-list">
+                                        <div class="dropdown-list" >
                                             <div><i class="fa-solid fa-chevron-down"></i></div>
                                             <ul>
                                                 <li @click="remove(index)">Cancella Messaggio</li>
@@ -88,9 +88,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="head-name">
+                    <div class="head-name d-flex justify-content align-center">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage()">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage()" class="p-10">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
 
