@@ -203,6 +203,7 @@ const { createApp } = Vue
         },
         clickMessage(index){
             this.messageSelected = index;
+            this.isActive = !this.isActive
         }
     }
   }).mount('#app')

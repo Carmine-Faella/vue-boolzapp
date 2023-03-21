@@ -194,9 +194,10 @@ img{
     height: 100px;
 }
 
-.dropdown:hover .dropdown-list{
+.d-block{
     display: block;
 }
+
 
 
 
