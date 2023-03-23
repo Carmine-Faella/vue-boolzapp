@@ -191,7 +191,9 @@ const { createApp } = Vue
             this.newMessage = ''
         },
         remove(index){
-            this.contacts[this.avatarSelezionato].messages.splice(index,1)
+            this.contacts[this.avatarSelezionato].messages.splice(index,1);
+            this.messageSelected = null
+            this.isActive = false;
         },
         addMessageComputer(){
             this.contacts[this.avatarSelezionato].messages.push(
@@ -202,13 +204,13 @@ const { createApp } = Vue
             )
         },
         showMessage(index){
-                if(this.messageSelected == index){
-                    this.messageSelected = null
-                    this.isActive = false;
-                }else{
-                    this.messageSelected = index;
-                    this.isActive = true;
-                }
+            if(this.messageSelected == index){
+                this.messageSelected = null
+                this.isActive = false;
+            }else{
+                this.messageSelected = index;
+                this.isActive = true;
+            }
         }
     }
   }).mount('#app')
