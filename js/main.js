@@ -170,7 +170,7 @@ const { createApp } = Vue
             }
             ],
             avatarSelezionato:0,
-            messageSelected:0,
+            messageSelected: null,
             newMessage:'',
             searchName:'',
             isActive:false,
@@ -201,15 +201,15 @@ const { createApp } = Vue
                     }
             )
         },
-        clickMessage(index){
-            this.messageSelected = index;
+        showMessage(index){
+                if(this.messageSelected == index){
+                    this.messageSelected = null
+                    this.isActive = false;
+                }else{
+                    this.messageSelected = index;
+                    this.isActive = true;
+                }
         }
-       /* showMessage(index){
-            if((this.messageSelected == index) && (this.isActive == false)){
-                this.isActive = false;
-                return 'd-block'
-            }
-        }*/
     }
   }).mount('#app')
 

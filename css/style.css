@@ -182,7 +182,6 @@ img{
 
 .dropdown-list{
     position: relative;
-    display: none;
 }
 
 .dropdown ul{
@@ -194,7 +193,11 @@ img{
     height: 100px;
 }
 
-.dropdown:hover .dropdown-list{
+.dropdown i{
+    display: none;
+}
+
+.dropdown:hover i{
     display: block;
 }
 
